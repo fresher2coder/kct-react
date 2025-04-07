@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Root variables for color scheme */
+:root {
+  --primary-color: #8e3e63; /* Dark Pinkish */
+  --secondary-color: #d2649a; /* Light Pink */
+  --tertiary-color: #f6fab9; /* Soft Yellow */
+  --accent-color: #cae6b2; /* Pale Green */
+  --input-border-color: #cae6b2; /* Input border */
+  --input-focus-border: #8e3e63; /* Input focus border */
+  --input-bg-color: #f6fab9; /* Input background */
+  --btn-bg-color: #d2649a; /* Button background */
+  --btn-hover-bg: #8e3e63; /* Button hover background */
+  --btn-color: #f6fab9; /* Button text color */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  background-color: var(--input-border-color); /* Subtle background color */
+  animation: fadeInBody 1s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--primary-color);
+  min-height: 10vh;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main content styles */
+.main-content {
+  display: flex;
+  margin: 20px;
+  min-height: 80vh;
+  width: 100%;
+  flex-wrap: wrap; /* Ensure items wrap to avoid horizontal scroll */
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.main-content:hover {
+  background-color: #fafafa; /* Subtle hover effect on background */
+  transform: scale(1.01);
+}
+
+/* Sidebar styles */
+.sidebar {
+  flex: 1;
+  background-color: var(--tertiary-color);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Limit sidebar width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main body styles */
+.main-body {
+  flex: 2;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Limit main body width */
+  animation: fadeInContent 1s ease-in-out;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  min-height: 10vh;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.footer:hover {
+  transform: scale(1.01);
+  background-color: var(--accent-color);
+}
+
+/* Typography */
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--input-bg-color);
+}
+
+.btns {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.container-employee {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.container-employee h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.container-employee label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container-employee select {
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.container-employee table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container-employee table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.container-employee table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.container-employee table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.container-employee .total-salary {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Profile Form Styling */
+.profile-form {
+  background-color: var(--input-border-color);
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid var(--input-border-color);
+  border-radius: 5px;
+  background-color: var(--input-bg-color);
+  color: var(--primary-color);
+}
+
+.profile-form input:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+}
+
+.profile-form button {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-form button:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+/* Profile Card Styling */
+.profile-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 10px auto;
+  max-width: 1300px;
+}
+
+.card {
+  background-color: var(--input-focus-border);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-details {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.card button {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+/* Modal overlay */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Modal content */
+.ReactModal__Content {
+  background: transparent !important;
+  border: none !important;
+  width: 90% !important;
+  max-width: 500px !important;
+  margin: auto !important;
+  padding: 20px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow-x: hidden !important;
+}
+
+/* Close button */
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
