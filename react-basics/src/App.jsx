@@ -4,6 +4,8 @@ import UserProfile from "./components/props/UserProfile";
 
 import "./App.css";
 import PropContainer from "./components/props/PropContainer";
+import Parent from "./components/props/propsMethod/Parent";
+import Counter from "./components/state/Counter";
 
 function App() {
   // let age = 23;
@@ -32,6 +34,7 @@ function App() {
         />
       </section>
 
+      {/* childern as props */}
       <section className="profile-card">
         <PropContainer title="Dashboard">
           <h2>Welcome to the E-Learning!</h2>
@@ -40,6 +43,12 @@ function App() {
           <h2>Change your settings here!</h2>
         </PropContainer>
       </section>
+
+      {/* method as props */}
+      <Parent />
+
+      {/* state  */}
+      <Counter />
     </>
   );
 }
