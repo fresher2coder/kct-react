@@ -85,3 +85,17 @@ let flag = a++ > 9 || ++a < 10;
 
 console.log(flag); //flase
 console.log(a); //11
+
+//6. map - apply the logic to every element
+// filter - filter the elements based on the condition
+// reduce - reduce the elements to a single value
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let squares = numbers.map((num) => num * num);
+console.log(squares);
+
+let evenNumbers = numbers.filter((num) => num % 2 === 0);
+console.log(evenNumbers);
+
+let total = numbers.reduce((sum, num) => sum + num, 0);
+console.log(total);

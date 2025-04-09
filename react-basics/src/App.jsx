@@ -8,6 +8,7 @@ import Parent from "./components/props/propsMethod/Parent";
 import Counter from "./components/state/Counter";
 import MultiCounter from "./components/state/MultiCounter";
 import MouseTrackerApp from "./components/useEffect/MouseTrackerApp";
+import EmployeeTable from "./components/mapFilterReduce/EmployeeTable";
 
 function App() {
   // let age = 23;
@@ -61,7 +62,10 @@ function App() {
       </div> */}
 
       {/* lifecyle methods - useEffect  */}
-      <MouseTrackerApp />
+      {/* <MouseTrackerApp /> */}
+
+      {/* list rendering - map, filter, reduce  */}
+      <EmployeeTable />
     </>
   );
 }
