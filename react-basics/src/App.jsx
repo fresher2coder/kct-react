@@ -7,6 +7,7 @@ import PropContainer from "./components/props/PropContainer";
 import Parent from "./components/props/propsMethod/Parent";
 import Counter from "./components/state/Counter";
 import MultiCounter from "./components/state/MultiCounter";
+import MouseTrackerApp from "./components/useEffect/MouseTrackerApp";
 
 function App() {
   // let age = 23;
@@ -55,9 +56,12 @@ function App() {
         <Counter title="Counter 100X" initialValue={100} incrementValue={100} />
       </div> */}
 
-      <div className="container">
+      {/* <div className="container">
         <MultiCounter />
-      </div>
+      </div> */}
+
+      {/* lifecyle methods - useEffect  */}
+      <MouseTrackerApp />
     </>
   );
 }

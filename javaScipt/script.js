@@ -78,3 +78,10 @@ console.log(user);
 
 user = { ...user, address: "Chennai", age: 35 };
 console.log(user);
+
+let a = 10; //11
+
+let flag = a++ > 9 || ++a < 10;
+
+console.log(flag); //flase
+console.log(a); //11

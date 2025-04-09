@@ -9,6 +9,24 @@ function MultiCounter() {
       countA: prevCounters.countA + 1,
     }));
   };
+  const handleIncrementB = () => {
+    setCounters((prevCounters) => ({
+      ...prevCounters,
+      countB: prevCounters.countB + 10,
+    }));
+  };
+  const handleDecrementA = () => {
+    setCounters((prevCounters) => ({
+      ...prevCounters,
+      countA: prevCounters.countA - 1,
+    }));
+  };
+  const handleDecrementB = () => {
+    setCounters((prevCounters) => ({
+      ...prevCounters,
+      countB: prevCounters.countB - 10,
+    }));
+  };
 
   return (
     <>
@@ -18,12 +36,18 @@ function MultiCounter() {
         <button className="btn" onClick={handleIncrementA}>
           Increment A
         </button>
-        <button className="btn">Decrement A</button>
+        <button className="btn" onClick={handleDecrementA}>
+          Decrement A
+        </button>
       </div>
       <h2>Count B: {counters.countB}</h2>
       <div className="btns">
-        <button className="btn">Increment B</button>
-        <button className="btn">Decrement B</button>
+        <button className="btn" onClick={handleIncrementB}>
+          Increment B
+        </button>
+        <button className="btn" onClickCapture={handleDecrementB}>
+          Decrement B
+        </button>
       </div>
     </>
   );
