@@ -6,6 +6,7 @@ import "./App.css";
 import PropContainer from "./components/props/PropContainer";
 import Parent from "./components/props/propsMethod/Parent";
 import Counter from "./components/state/Counter";
+import MultiCounter from "./components/state/MultiCounter";
 
 function App() {
   // let age = 23;
@@ -16,7 +17,7 @@ function App() {
       {/* <MainLayout /> */}
 
       {/* props */}
-      <section className="profile-card">
+      {/* <section className="profile-card">
         <UserProfile
           name="Dineshkumar"
           age={34}
@@ -32,23 +33,31 @@ function App() {
           address="Chennai"
           phone={9685747458}
         />
-      </section>
+      </section> */}
 
       {/* childern as props */}
-      <section className="profile-card">
+      {/* <section className="profile-card">
         <PropContainer title="Dashboard">
           <h2>Welcome to the E-Learning!</h2>
         </PropContainer>
         <PropContainer title="Settings">
           <h2>Change your settings here!</h2>
         </PropContainer>
-      </section>
+      </section> */}
 
       {/* method as props */}
-      <Parent />
+      {/* <Parent /> */}
 
       {/* state  */}
-      <Counter />
+      {/* <div className="container">
+        <Counter title="Counter 1x" initialValue={1} incrementValue={1} />
+        <Counter title="Counter 10x" initialValue={10} incrementValue={10} />
+        <Counter title="Counter 100X" initialValue={100} incrementValue={100} />
+      </div> */}
+
+      <div className="container">
+        <MultiCounter />
+      </div>
     </>
   );
 }

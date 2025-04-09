@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-function Counter() {
-  const [count, setCount] = useState(0); // state variable - hooks
-  const [counterName, setCounterName] = useState("Counter"); // state variable - hooks
+function Counter(props) {
+  const { title, initialValue, incrementValue } = props;
+  const [count, setCount] = useState(initialValue); // state variable - hooks
+  const [counterName, setCounterName] = useState(title); // state variable - hooks
 
   const increment = () => {
-    setCounterName(() => "Increment Counter"); // setCounterName is a function to update the state variable
-    setCount((prevCount) => prevCount + 1); // setCount is a function to update the state variable
+    // setCounterName(() => "Increment Counter"); // setCounterName is a function to update the state variable
+    setCount((prevCount) => prevCount + incrementValue); // setCount is a function to update the state variable
     console.log(count);
   };
   const incrementFive = () => {
@@ -17,8 +18,8 @@ function Counter() {
     setCounterName(() => "Increment Five Counte");
   };
   const decrement = () => {
-    setCounterName(() => "Decrement Counter");
-    setCount((prevCount) => prevCount - 1); // setCount is a function to update the state variable
+    // setCounterName(() => "Decrement Counter");
+    setCount((prevCount) => prevCount - incrementValue); // setCount is a function to update the state variable
     console.log(count);
   };
   return (
@@ -34,9 +35,9 @@ function Counter() {
           <button className="btn" onClick={decrement}>
             Decrement
           </button>
-          <button className="btn" onClick={incrementFive}>
+          {/* <button className="btn" onClick={incrementFive}>
             Increment Five
-          </button>
+          </button> */}
         </div>
       </section>
     </>

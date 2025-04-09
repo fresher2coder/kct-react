@@ -70,3 +70,11 @@ setTimeout(() => {
 }, 0); // This will execute after 2 seconds
 
 console.log("End");
+
+//5.spread operator
+
+let user = { name: "Dineshkumar", age: 34 };
+console.log(user);
+
+user = { ...user, address: "Chennai", age: 35 };
+console.log(user);
