@@ -10,7 +10,13 @@ function ProfileForm(props) {
 
   useEffect(() => {
     if (isEdit) setProfile(currentProfile);
-  }, []);
+    else
+      setProfile({
+        fullname: "",
+        age: "",
+        occupation: "",
+      });
+  }, [isEdit]);
 
   const handleChange = (event) => {
     setProfile((prevProfile) => ({

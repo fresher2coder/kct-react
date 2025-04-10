@@ -16,6 +16,8 @@ function Profile() {
 
   const deleteProfile = (id) => {
     setProfiles((prev) => prev.filter((profile) => profile.id !== id));
+    setIsEdit(false);
+    setCurrentProfile(null);
   };
 
   const updateProfile = (id, updateProfile) => {
