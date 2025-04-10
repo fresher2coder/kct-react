@@ -1,0 +1,140 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a4a);
+  color: #f4f4f4;
+}
+
+.app-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #e0e0ff;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.movie-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.movie-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.movie-genre {
+  font-size: 0.9rem;
+  color: #c9c9ff;
+  margin-bottom: 0.5rem;
+}
+
+.movie-status {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+
+  font-weight: bold;
+  color: #fbd38d;
+
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.movie-card.watched .movie-status {
+  color: #90ee90;
+}
+
+.watch-btn {
+  padding: 0.5rem 1rem;
+  background-color: #cd0494;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.watch-btn:hover {
+  background-color: #7f9cf5;
+}
+
+.movie-stats {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.movie-stats h2 {
+  margin-bottom: 0.75rem;
+  color: #f4f4ff;
+}
+
+.movie-stats ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.movie-list .movie-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.movie-list .movie-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.movie-list .movie-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+/* Add more if needed */
+
+/* .movie-stats {
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+} */
