@@ -31,15 +31,19 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
 
-  animation: fadeSlideIn 0.8s ease-out forwards;
   opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s ease-out forwards;
+
+  /* Prevent animation conflict with hover */
+  will-change: transform, opacity;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .movie-card:hover {
-  transform: scale(1.03);
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(0) scale(1.05); /* Combine with slide reset */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .movie-title {
@@ -52,6 +56,11 @@ body {
   font-size: 0.9rem;
   color: #c9c9ff;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.movie-card:hover .movie-genre {
+  color: #ff8ac4;
 }
 
 .movie-status {
@@ -80,11 +89,12 @@ body {
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .watch-btn:hover {
   background-color: #7f9cf5;
+  animation: bounce 0.4s ease;
 }
 
 .movie-stats {
@@ -131,10 +141,14 @@ body {
 .movie-list .movie-card:nth-child(3) {
   animation-delay: 0.6s;
 }
-/* Add more if needed */
 
-/* .movie-stats {
-  animation: fadeSlideIn 0.8s ease-out forwards;
-  animation-delay: 0.1s;
-  opacity: 0;
-} */
+/* Bounce Animation for Button on Hover */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}

@@ -99,3 +99,42 @@ console.log(evenNumbers);
 
 let total = numbers.reduce((sum, num) => sum + num, 0);
 console.log(total);
+
+//7. promise
+
+const promise1 = new Promise((resolve, reject) => {
+  //fetch data -  url(sever)
+  const love = true;
+  if (love) {
+    resolve("Heart");
+  } else {
+    reject("Broken Heart");
+  }
+});
+
+promise1
+  .then((msg) => {
+    console.log("Marriage: ", msg);
+  })
+  .catch((msg) => {
+    console.log("Break UP: ", msg);
+  });
+
+const promiseFn = (love) => {
+  return new Promise((resolve, reject) => {
+    //fetch data -  url(sever)
+    if (love) {
+      resolve("Heart");
+    } else {
+      reject("Broken Heart");
+    }
+  });
+};
+
+promiseFn(true)
+  .then((msg) => {
+    console.log("Marriage: ", msg);
+  })
+  .catch((msg) => {
+    console.log("Break UP: ", msg);
+  });
