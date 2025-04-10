@@ -377,7 +377,7 @@ body {
   padding: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
   background: var(--bg-gradient);
-  color: var(--text-color);
+
   min-height: 100vh;
   display: flex;
   justify-content: center;
