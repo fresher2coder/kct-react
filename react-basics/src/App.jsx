@@ -10,6 +10,8 @@ import MultiCounter from "./components/state/MultiCounter";
 import MouseTrackerApp from "./components/useEffect/MouseTrackerApp";
 import EmployeeTable from "./components/mapFilterReduce/EmployeeTable";
 import UserAPI from "./components/apiFetch/UserAPI";
+import WeatherAPI from "./components/apiFetch/WeatherAPI";
+import Profile from "./components/formHandling/Profile";
 
 function App() {
   // let age = 23;
@@ -69,7 +71,13 @@ function App() {
       {/* <EmployeeTable /> */}
 
       {/* api-fetch  */}
-      <UserAPI />
+      {/* <UserAPI /> */}
+      {/* <WeatherAPI /> */}
+
+      {/* form handling  */}
+      <div className="container">
+        <Profile />
+      </div>
     </>
   );
 }

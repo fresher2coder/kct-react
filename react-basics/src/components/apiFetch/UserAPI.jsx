@@ -4,6 +4,7 @@ import { use } from "react";
 
 function UserAPI() {
   const [users, setusers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchUsers = async () => {
     // axios
@@ -24,6 +25,8 @@ function UserAPI() {
       setusers(response.data);
     } catch (err) {
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -36,15 +39,23 @@ function UserAPI() {
       <div className="app-container">
         <h1 className="main-title">Users List</h1>
 
-        <ul className="user-list">
-          {users.map((user) => (
-            <li key={user.id}>
-              <strong>{user.name}</strong>
-              <br />
-              {user.email}
-            </li>
-          ))}
-        </ul>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <ul className="user-list">
+            {users ? (
+              users.map((user) => (
+                <li key={user.id}>
+                  <strong>{user.name}</strong>
+                  <br />
+                  {user.email}
+                </li>
+              ))
+            ) : (
+              <p>Users Not Found</p>
+            )}
+          </ul>
+        )}
       </div>
     </>
   );
