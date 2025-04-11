@@ -1,7 +1,9 @@
 // components/MovieCard.js
 import React from "react";
+import { useMovie } from "../context/MovieContext";
 
-const MovieCard = ({ movie, toggleWatched }) => {
+const MovieCard = ({ movie }) => {
+  const { toggleWatched } = useMovie();
   return (
     <div className={`movie-card ${movie.watched ? "watched" : "to-watch"}`}>
       <h2 className="movie-title">{movie.title}</h2>

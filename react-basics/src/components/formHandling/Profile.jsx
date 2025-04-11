@@ -9,9 +9,18 @@ function Profile() {
   const [isEdit, setIsEdit] = useState(false);
   const [currentProfile, setCurrentProfile] = useState(null);
 
-  const addProfile = (profile) => {
-    profile.id = generateId();
-    setProfiles((prev) => [...prev, profile]);
+  const addProfile = (newProfile) => {
+    const isDuplicate = profiles.some(
+      (profile) => profile.fullname === newProfile.fullname
+    );
+
+    if (isDuplicate) {
+      alert(`Profile is already exist with the name: ${newProfile.fullname}`);
+      return;
+    }
+
+    newProfile.id = generateId();
+    setProfiles((prev) => [...prev, newProfile]);
   };
 
   const deleteProfile = (id) => {

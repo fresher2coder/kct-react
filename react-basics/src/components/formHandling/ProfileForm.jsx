@@ -7,6 +7,7 @@ function ProfileForm(props) {
     age: "",
     occupation: "",
   });
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     if (isEdit) setProfile(currentProfile);
@@ -25,8 +26,39 @@ function ProfileForm(props) {
     }));
   };
 
+  const validate = () => {
+    const nameOccupationRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+    const ageRegex = /^\d+$/;
+
+    const newErrors = {};
+
+    if (profile.fullname.trim() === "")
+      newErrors.fullname = "Fullname is required";
+
+    if (profile.age.trim() === "") newErrors.age = "Age is required";
+
+    if (profile.occupation.trim() === "") {
+      newErrors.occupation = "Occupation is required";
+      setErrors(newErrors);
+      return Object.keys(newErrors).length == 0;
+    }
+
+    if (!nameOccupationRegex.test(profile.fullname))
+      newErrors.fullname = "Fullname should contain only letters and spaces";
+    if (!ageRegex.test(profile.age)) newErrors.age = "Age should be a number";
+    if (!nameOccupationRegex.test(profile.occupation))
+      newErrors.occupation =
+        "Occupation should contain only letters and spaces";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length == 0;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!validate()) return;
+
     if (isEdit) onUpdate(currentProfile.id, profile);
     else onAdd(profile);
 
@@ -49,6 +81,7 @@ function ProfileForm(props) {
           value={profile.fullname}
           onChange={handleChange}
         />
+        {errors.fullname && <span className="error">* {errors.fullname}</span>}
         <input
           type="text"
           placeholder="Age"
@@ -56,6 +89,7 @@ function ProfileForm(props) {
           value={profile.age}
           onChange={handleChange}
         />
+        {errors.age && <span className="error">* {errors.age}</span>}
         <input
           type="text"
           placeholder="Occupation"
@@ -63,6 +97,9 @@ function ProfileForm(props) {
           value={profile.occupation}
           onChange={handleChange}
         />
+        {errors.occupation && (
+          <span className="error">* {errors.occupation}</span>
+        )}
         <button type="submit">{isEdit ? "Update" : "Add"}</button>
       </form>
     </>

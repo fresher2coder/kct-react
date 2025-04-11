@@ -1,7 +1,9 @@
 // components/MovieStats.js
 import React, { useEffect, useState } from "react";
+import { useMovie } from "../context/MovieContext";
 
-const MovieStats = ({ movies }) => {
+const MovieStats = () => {
+  const { movies } = useMovie();
   const [genreCount, setGenreCount] = useState({});
 
   const total = movies.length;
