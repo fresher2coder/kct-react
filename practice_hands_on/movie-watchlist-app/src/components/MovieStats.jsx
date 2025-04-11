@@ -1,6 +1,6 @@
-// components/MovieStats.js
 import React, { useEffect, useState } from "react";
 import { useMovie } from "../context/MovieContext";
+// import MovieStats from "./components/MovieStats.css";
 
 const MovieStats = () => {
   const { movies } = useMovie();
