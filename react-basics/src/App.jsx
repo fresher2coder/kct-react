@@ -71,8 +71,12 @@ function App() {
       {/* <EmployeeTable /> */}
 
       {/* api-fetch  */}
-      {/* <UserAPI /> */}
-      {/* <WeatherAPI /> */}
+      {/* <div className="container">
+        <UserAPI />
+      </div> */}
+      {/* <div className="container">
+        <WeatherAPI />
+      </div> */}
 
       {/* form handling  */}
       <div className="container">

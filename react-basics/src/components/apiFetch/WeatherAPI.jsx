@@ -36,7 +36,7 @@ function WeatherAPI() {
       <div className="app-container">
         <h1 className="main-title">Weather App</h1>
         {weather && (
-          <div className="weather-car">
+          <div className="weather-card">
             <h2>{weather.name}</h2>
             <h3>{weather.weather[0].main}</h3>
             <p>Temp: {weather.main.temp}</p>
