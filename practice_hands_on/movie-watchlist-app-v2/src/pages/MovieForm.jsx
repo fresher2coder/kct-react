@@ -20,16 +20,14 @@ const MovieForm = () => {
     const nameRegex = /^[A-Za-z\s]{2,}$/;
     const yearRegex = /^\d{4}$/;
 
-    if (!nameRegex.test(title) || !yearRegex.test(year)) {
+    if (!nameRegex.test(movie.title) || !yearRegex.test(movie.year)) {
       alert("Please enter a valid movie title and 4-digit year");
       return;
     }
 
     const newMovie = {
       id: uuidv4(),
-      title,
-      genre,
-      year,
+      ...movie,
       watched: false,
       favorite: false,
     };
