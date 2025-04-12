@@ -45,6 +45,7 @@ const UserRegistration = () => {
       console.error("Error submitting form", error);
     }
   };
+  ``;
 
   return (
     <div className="registration-container">
@@ -55,7 +56,9 @@ const UserRegistration = () => {
             type="text"
             placeholder="Name"
             value={formData.personal.name}
-            onChange={(e) => handleChange("personal", "name", e.target.value)}
+            onChange={(event) =>
+              handleChange("personal", "name", event.target.value)
+            }
             required
           />
           <input
