@@ -376,7 +376,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
-  background: var(--bg-gradient);
 
   min-height: 100vh;
   display: flex;
@@ -454,14 +453,14 @@ body {
 .weather-card h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--accent);
+  color: var(--primary-color);
 }
 
 .weather-card h3 {
   font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 1rem;
-  color: #cbd5e1;
+  color: var(--secondary-color);
 }
 
 .weather-card p {
