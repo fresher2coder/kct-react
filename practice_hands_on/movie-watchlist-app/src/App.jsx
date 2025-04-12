@@ -16,7 +16,7 @@ const App = () => {
         <div className="content-area">
           <h1 className="main-title">My Movie Watchlist</h1>
           <Routes>
-            <Route path="/" element={<><MovieList /></>} />
+            <Route path="/" element={<MovieList />} />
             <Route path="/add-movies" element={<AddMovieForm />} />
             <Route path="/stats" element={<MovieStats />} />
             <Route path="/favorites" element={<Favorites />} />
