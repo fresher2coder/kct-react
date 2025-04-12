@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { MovieContext } from "../context/MovieContext";
+import { useMovie } from "../context/MovieContext";
 import MovieCard from "../components/MovieCard";
 
 const Favorites = () => {
-  const { favorites } = useContext(MovieContext);
+  const { favorites } = useMovie();
 
   return (
     <div className="app-container">

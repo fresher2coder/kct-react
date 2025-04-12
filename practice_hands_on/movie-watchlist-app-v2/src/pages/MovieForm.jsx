@@ -1,12 +1,19 @@
 import React, { useState, useContext } from "react";
 import { MovieContext } from "../context/MovieContext";
 import { v4 as uuidv4 } from "uuid";
+import Favorites from "./Favorites";
 
 const MovieForm = () => {
   const { addMovie } = useContext(MovieContext);
-  const [title, setTitle] = useState("");
-  const [genre, setGenre] = useState("");
-  const [year, setYear] = useState("");
+  const [movie, setMovie] = useState({
+    title: "",
+    genre: "",
+    year: "",
+  });
+
+  const handleChange = (event) => {
+    setMovie((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,12 +31,11 @@ const MovieForm = () => {
       genre,
       year,
       watched: false,
+      favorite: false,
     };
 
     addMovie(newMovie);
-    setTitle("");
-    setGenre("");
-    setYear("");
+    setMovie({ title: "", genre: "", year: "" });
   };
 
   return (
@@ -37,20 +43,23 @@ const MovieForm = () => {
       <input
         type="text"
         placeholder="Movie Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        name="title"
+        value={movie.title}
+        onChange={handleChange}
       />
       <input
         type="text"
         placeholder="Genre"
-        value={genre}
-        onChange={(e) => setGenre(e.target.value)}
+        name="genre"
+        value={movie.genre}
+        onChange={handleChange}
       />
       <input
         type="text"
         placeholder="Year"
-        value={year}
-        onChange={(e) => setYear(e.target.value)}
+        name="year"
+        value={movie.year}
+        onChange={handleChange}
       />
       <button type="submit">Add Movie</button>
     </form>

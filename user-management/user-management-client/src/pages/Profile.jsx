@@ -36,10 +36,10 @@ const Profile = () => {
 
     const updated = {
       ...formData,
-      [editSection]: { ...tempData }, // ensure it's not linked to state
+      [editSection]: { ...tempData }, 
     };
 
-    console.log("Sending updated profile:", updated);
+    // console.log("Sending updated profile:", updated);
 
     try {
       const response = await axios.put(

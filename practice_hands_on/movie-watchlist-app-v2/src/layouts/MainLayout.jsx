@@ -9,7 +9,7 @@ function MainLayout(props) {
     <>
       <NavBar />
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
