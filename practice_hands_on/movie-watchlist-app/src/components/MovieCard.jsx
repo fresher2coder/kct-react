@@ -1,9 +1,8 @@
-// components/MovieCard.js
 import React from "react";
 import { useMovie } from "../context/MovieContext";
 
 const MovieCard = ({ movie }) => {
-  const { toggleWatched } = useMovie();
+  const { toggleWatched, toggleFavorite, deleteMovie } = useMovie();
   return (
     <div className={`movie-card ${movie.watched ? "watched" : "to-watch"}`}>
       <h2 className="movie-title">{movie.title}</h2>
@@ -13,6 +12,12 @@ const MovieCard = ({ movie }) => {
       </p>
       <button onClick={() => toggleWatched(movie.id)} className="watch-btn">
         {movie.watched ? "Mark as Unwatched" : "Mark as Watched"}
+      </button>
+      <button onClick={() => toggleFavorite(movie.id)} className="fav-btn">
+        ❤️ {movie.isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+      </button>
+      <button onClick={() => deleteMovie(movie.id)} className="delete-btn">
+        ❌ Delete
       </button>
     </div>
   );
