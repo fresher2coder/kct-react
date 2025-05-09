@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       {/* layout */}
-      {/* <MainLayout /> */}
+      <MainLayout />
 
       {/* props */}
       {/* <section className="profile-card">
@@ -79,9 +79,9 @@ function App() {
       </div> */}
 
       {/* form handling  */}
-      <div className="container">
+      {/* <div className="container">
         <Profile />
-      </div>
+      </div> */}
     </>
   );
 }
