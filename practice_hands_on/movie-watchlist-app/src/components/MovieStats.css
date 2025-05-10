@@ -1,0 +1,39 @@
+.movie-stats-container {
+    margin-left: 220px; /* to offset sidebar */
+    padding: 2rem;
+    max-width: 800px;
+    margin-top: 2rem;
+    background-color: #f9fafb;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .movie-stats-container:hover {
+    transform: scale(1.01);
+  }
+  
+  .movie-stats-container h2 {
+    font-size: 1.8rem;
+    color: #111827;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+  
+  .stats-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .stats-list li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .stats-list li:last-child {
+    border-bottom: none;
+  }
+  
